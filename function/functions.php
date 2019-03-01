@@ -34,7 +34,7 @@ function all_movies(){
         if($count%3==0){
             echo "</tr><tr>";
         }
-        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='../coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
+        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='/coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
         $count++;
     }
 }
@@ -47,7 +47,7 @@ function movies_by_genere(){
         if($count%3==0){
             echo "</tr><tr>";
         }
-        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='../coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
+        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='/coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
         $count++;
     }
 }
@@ -60,7 +60,7 @@ function search_movie(){
         if($count%3==0){
             echo "</tr><tr>";
         }
-        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='../coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
+        echo "<td><a href='index.php?movieid=".$movie['Movie_id']."'><img src='/coverimage/".$movie['coverimage']."'></a><br>".$movie['name']."<td>";
         $count++;
     }
 }
@@ -70,7 +70,7 @@ function show_movie(){
     $movies=get_data($sql);
     $movie=mysqli_fetch_assoc($movies);
     echo "<tr><td valign='top' colspan='3'><h1>".$movie['name']."</h1><hr></td></tr><tr>
-    <td valign='top' rowspan='8'><img src='../coverimage/".$movie['coverimage']."'></td>";
+    <td valign='top' rowspan='8'><img src='/coverimage/".$movie['coverimage']."'></td>";
     foreach($movie as $key=>$value){
         if($key=='coverimage'||$key=='Movie_id'){
 
@@ -94,7 +94,7 @@ function add_comment_ui(){
     $movies=get_data($sql);
     $movie=mysqli_fetch_assoc($movies);
     echo "<tr><td valign='top' colspan='3'><h3> Add comment for ".$movie['name']."</h3><hr></td></tr><tr>
-    <td valign='top' rowspan='2'><img src='../coverimage/".$movie['coverimage']."'></td><td><form action='index.php?movie=".$_GET['movie']."' method='post'><textarea name='comment'></textarea></td></tr><tr><td><input type='submit' class='brn btn-secondary' value='Add Comment'></td>";
+    <td valign='top' rowspan='2'><img src='/coverimage/".$movie['coverimage']."'></td><td><form action='index.php?movie=".$_GET['movie']."' method='post'><textarea name='comment'></textarea></td></tr><tr><td><input type='submit' class='brn btn-secondary' value='Add Comment'></td>";
 }
 function add_comment(){
     $sql = "insert  into comment values('".$_SESSION['username']."','".$_GET['movie']."','".$_POST['comment']."',now())";
