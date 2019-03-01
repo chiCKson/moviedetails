@@ -42,18 +42,18 @@ Hi! <?php echo $_SESSION['username']?>
     <table style="font-size:80%">
         <?php
         if(isset($_GET['genere'])==false){
-            if($_GET['page']=='search'){
+            if(isset($_GET['page']) && $_GET['page']=='search'){
                 echo "<tr><td valign='top' colspan='3'><h1>Search Movies</h1><hr></td></tr><form action='' method='post'><tr><td>Enter Movie Name</td><td><input type='text' name='moviename'></td><td><input type='submit' class='btn btn-secondary' value='Search'></td></tr></form>";
                if(isset($_POST['moviename'])){
                     search_movie();
                }
             }else if(isset($_GET['movieid'])){
                 show_movie();
-            }else if($_GET['page']=='addcomment'){
+            }else if(isset($_GET['page']) && $_GET['page']=='addcomment'){
                 add_comment_ui();
             }else if(isset($_POST['comment'])){
                 add_comment();
-            }else if($_GET['page']=='mycomments'){
+            }else if(isset($_GET['page']) && $_GET['page']=='mycomments'){
                 
                 show_my_comments();
             }else{

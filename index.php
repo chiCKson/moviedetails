@@ -9,13 +9,13 @@ if(isset($_COOKIE['username'])){
 }
 
 if(isset($_SESSION['username'])==false){
-    if($_GET['page']=='signup'){
+    if(isset($_GET['page']) && $_GET['page']=='signup'){
         require('views/signup.php');
     }else{
         require('views/login.php');
     }
 }else{
-    if($_GET['page']=='signout'){
+    if(isset($_GET['page']) && $_GET['page']=='signout'){
         signout();
     }else{
         require('views/home.php');
