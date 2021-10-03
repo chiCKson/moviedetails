@@ -3,6 +3,11 @@
 //login page
 require_once 'conf/conf.php';
 require_once 'functions/loginfun.php';
+session_start();
+if (empty($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+$token = $_SESSION['token'];
 ?>
 
 
