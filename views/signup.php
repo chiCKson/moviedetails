@@ -19,8 +19,8 @@
                 </td>
 
                 <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['signup_username']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['signup_username'] == '') {
                         echo "<td><span style=\"color:red\">Please enter an username</span></td>";
                     }
                 }
@@ -35,8 +35,8 @@
                     <input type="text" name="signup_fname">
                 </td>
                 <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['signup_fname']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['signup_fname'] == '') {
                         echo "<td><span style=\"color:red\">Please enter the firstname</span></td>";
                     }
                 }
@@ -50,8 +50,8 @@
                     <input type="text" name="signup_lname">
                 </td>
                 <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['signup_lname']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['signup_lname'] == '') {
                         echo "<td><span style=\"color:red\">Please enter the lastname</span></td>";
                     }
                 }
@@ -65,8 +65,8 @@
                     <input type="text" name="age">
                 </td>
                 <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['age']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['age'] == ''){
                         echo "<td><span style=\"color:red\">Please enter the age</span></td>";
                     }
                 }
@@ -76,8 +76,8 @@
                <td>New Password</td>
                <td> <input type="password" name="new_password"></td>
                <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['new_password']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['new_password'] == ''){
                         echo "<td><span style=\"color:red\">Please enter the password</span></td>";
                     }
                 }
@@ -87,10 +87,10 @@
                 <td>Confirm Password</td>
                 <td><input type="password" name="confirm_password"></td>
                 <?php 
-                if(isset($_POST['signup_btn'])){
-                    if($_POST['confirm_password']==''){
+                if(isset($_POST['signup_btn'])) {
+                    if($_POST['confirm_password'] == '') {
                         echo "<td><span style=\"color:red\">Please enter the password again</span></td>";
-                    }else if($_POST['confirm_password']!=$_POST['new_password']){
+                    } else if($_POST['confirm_password']!=$_POST['new_password']) {
                         echo "<td><span style=\"color:red\">Password doesnot match</span></td>";
                     }
                 }
@@ -103,8 +103,8 @@
         </table>
     </form>
     <?php
-    if(isset($_POST['signup_btn'])){
-        if($_POST['confirm_password']!='' && $_POST['new_password']!='' && $_POST['confirm_password']==$_POST['new_password'] && $_POST['age']!=''
+    if (isset($_POST['signup_btn'])) {
+        if ($_POST['confirm_password']!='' && $_POST['new_password']!='' && $_POST['confirm_password']==$_POST['new_password'] && $_POST['age']!=''
         && $_POST['signup_lname']!='' && $_POST['signup_fname']!='' && $_POST['signup_username']!=''){
             signup();
         }
